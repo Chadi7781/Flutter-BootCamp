@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -37,8 +39,10 @@ class _MyAppState  extends State<MyApp> {
           Checkbox(value: orangeVal, onChanged: (bool value)=>{
             setState(()=> orangeVal = value)
           })
+          //Progress
 
         ],),
+        orangeVal == true ? CircularProgressIndicator() : Container(),
 
         //Apple Checkbox
         Column(mainAxisAlignment: MainAxisAlignment.center,
@@ -58,6 +62,8 @@ class _MyAppState  extends State<MyApp> {
       Text("Orange:$orangeVal\nLemon: $lemonVal\nApple: $appleVal")
 
     ],),
+
+
     ),
     );
   }
